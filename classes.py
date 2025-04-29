@@ -136,6 +136,26 @@ elif val==-1:
 6
 greater
 -----------------------------------------------------------
+#__call__():instance can be directly called
+#__it__(),__le__(), __gt__(),__ge__(),___eq__(),__ne__():comparision methods
+#__hash__():decide where to place variable in obj/set/dict
+#__iter__():
+#__getitem__(),__setitem__():getitem index value ,to set the value in the index
 
-
+-------------------------------------------------------------------------------------
+#__getitem__(),__setitem__()
+class num():
+    def __init__(self,mylist):
+        self.mylist=mylist
+    def __getitem__(self,index):
+        return self.mylist[index]
+    def __setitem__(self,index,val):
+        self.mylist[index]=val
+numlist=num([1,2,3,4,5,6,7])
+print(numlist)
+numlist[3]=10
+print(numlist.mylist)
+#output:
+<__main__.num object at 0x000001B678F26C60> #addres of delected value
+[1, 2, 3, 10, 5, 6, 7]
 
