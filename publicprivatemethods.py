@@ -108,7 +108,72 @@ class.__name__: abc
 object.__module__: __main__
 class.__bases__: (<class 'object'>,)
 ----------------------------------------------------------------
-
+#program that uses class as student to store name and marks of a student,use a list to store the marks of 3 subjects.
+#constrains:
+""" 1.take class as student
+2.create a constructer for the student name
+3.create a function for marks,to be entered manuly within the class function and add the marks to list
+4.display the student name and the marks he /she got
+5.pass the obj, attributes of 2 student names
+testcase1:
+obj1:"vijay"
+obj2:"anil"
+output: vijay got [88,9,88]
+anil got[67,45,67] """
+-----------------
+class student:
+    def __init__(self,name):
+        self.name=name
+        self.marks=[]
+    def mark(self):
+        for i in range(0,3):
+            m=int(input((self.name,i+1)))
+            self.marks.append(m)
+            
+        
+    def display(self):
+        print(self.name,"got",self.marks)
+a=input() 
+b=input()
+ob=student(a)
+ob.mark()
+ob2=student(b)
+ob2.mark()
+ob.display()
+ob2.display()
+output:
+ vijay
+ anil
+('vijay', 1) 34
+('vijay', 2) 5
+('vijay', 3) 67
+('anil', 1) 78
+('anil', 2) 89
+('anil', 3) 46
+vijay got [34, 5, 67]
+anil got [78, 89, 46]
+----------------------------------------------
+""" program that has a class circle,use a class var to define the val of contant pi.
+use this class var to calculate the area and circumfrence of circle with the specified radious
+pi=3.14159
+r=7.5
+return area and circumfrence value to main program by creating function with in the class"""
+class circle():
+    pi=3.14159
+    def __init__(self,radius):
+        self.radius=radius
+    def area (self):
+      return pi*(radius**2)
+    def circu(self):
+      return 2*pi*radius
+    """def display(self):
+        print(circle.area())
+        print(circle.circu())"""
+        
+ob=circle(7.5) 
+class.area()
+class.circu()
+ob.display()
  
 
 
