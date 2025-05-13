@@ -1,4 +1,4 @@
-#polymorpism:overloading,overid
+#polymorphism:overloading,overid
 ing
 #overloading
 def hi(name="abc"):
@@ -139,6 +139,62 @@ output:
 student constructor
 person constructor
 ----------------------------------------------------------
+#method overiding by a polymorphism eval
+class pet:
+    def sound(self):
+        print("animalsound")
+class dog:
+    def sound(self):
+        print("bow bow...!")
+class cat:
+    def sound(self):
+        print("meow meow...!")
+
+pets=[dog(),cat(),pet()]
+for p in pets:
+    p.sound()
+output:
+bow bow...!
+meow meow...!
+animalsound
+--------------------------------------
+'''code for overriding different parameteers in parent methods by calculating the area of 
+circle and sqyare from a parent class shape 
+pass side 4 for  square and radius 5 for circle.'''
+from math import pi
+class shape:
+    def area(self):
+        return 0
+class Square(shape):
+    def __init__(self,side):
+        self.side=side
+    def area(self):
+        return side**2
+        
+       
+        
+class Circle(shape):
+    def __init__(self,r):
+        self.r=r
+    def area(self):
+        return pi*(r**2)
+    
+
+r=int(input())
+side=int(input())
+square=Square(side)
+circle=Circle(r)
+
+print(square.area())
+print(circle.area())
+output:
+ 4
+ 5
+25
+50.26548245743669
+------------------------------------------------------------
+
+
 
 
 
