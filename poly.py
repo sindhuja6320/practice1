@@ -1,0 +1,119 @@
+#polymorpism:overloading,overid
+ing
+#overloading
+def hi(name="abc"):
+    print("hello",name)
+hi()
+hi("sindhu")
+output:
+hello abc
+hello sindhu
+--------------------------------------------------
+#multiple args in overloading
+def abc(*args):
+    return sum(args)
+print(abc(12,34,5,56))
+output:
+107
+-------------------------------------------------------
+#simple overloading using class with constructor
+class ab:
+    def __init__(self,name=None,age=None):
+        if name and age :
+            print(f"name:{name},age:{age}")
+        elif name:
+            print("name:",name)
+        else:
+            print("No Data")
+ab()
+ab("sindhu")
+ab("prerana",20)
+output:
+No Data
+name: sindhu
+name:prerana,age:20
+<__main__.ab at 0x2623e0f5580>
+  ------------------------------------------------------
+  #isinstance()
+n=99
+print(isinstance(n,int))
+print(isinstance(n,float))
+output:
+True
+False
+----------------------------------------------
+#isinstance using class
+class pet:
+    pass
+class dog:
+    pass
+ob=dog()
+print(isinstance(ob,dog))
+print(isinstance(ob,pet))
+output:
+True
+False
+---------------------------------------------------------
+#overriding redifine the child class which is already exists
+class pet:
+    def sound(self):
+        print("animal sounds")
+class dog(pet):
+    def sound(self):
+        print("bow boww!")
+a=pet()
+a.sound()
+d=dog()
+d.sound()
+output:
+animal sounds
+bow boww!
+--------------------------------------------------------------------------
+
+
+-------------------------------------------------------
+#overloading with operators
+class val:
+    def __init__(self,x,y):
+        self.x=x
+        self.y=y
+    def __add__(self,ol):
+        return val(self.x+ol.x,self.y+ol.y)
+    def __str__(self):
+        return f"{self.x},{self.y}"
+a=val(1,2)
+b=val(3,5)
+print(a+b)
+output:
+4,7
+----------------------------------------------
+"""code for add two complex numbers,where imaginary numbers and real numbersto be evaluated seperately aith 
+__add__()method and raise and error exception with this values where unsupportive data type is encountered
+a=1+2i
+b=3+4i
+output:
+4+6i"""
+class complex:
+    def __init__(self,x=0,y=0):
+        self.x=x
+        self.y=y
+    def __add__(self,ol):
+        if isinstance(ol,complex):
+            return complex(self.x+ol.x,self.y+ol.y)
+        else:
+            raise TypeError("unsupported operand-type")
+    def __str__(self):
+        return f"{self.x} + {self.y}i"
+a=complex(1,2)
+b=complex(3,4)
+print(a+b)
+output:
+4 + 6i
+--------------------------------------------------------
+
+
+
+
+
+  
+
