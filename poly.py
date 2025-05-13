@@ -110,6 +110,35 @@ print(a+b)
 output:
 4 + 6i
 --------------------------------------------------------
+#overriding
+class pet:
+    def sound(self):
+        print("animal sounds")
+class dog(pet):
+    def sound(self):
+        super().sound()#calling parent class
+        print("bow boww!")
+a=pet()
+a.sound()
+output:
+animal sounds
+------------------------------------------------------------
+
+#constructor overriding:
+class student:
+    def __init__(self,name):
+        self.name=name
+        print("student constructor")
+class person(student):
+    def __init__(self,name,grade):
+        super().__init__(name)
+        self.grade=grade
+        print("person constructor")
+s=person('sindhu',"f")
+output:
+student constructor
+person constructor
+----------------------------------------------------------
 
 
 
