@@ -108,3 +108,39 @@ output:
  0
 non-processed
 ----------------------------------------------------------------
+'''
+Exception-base class/all exceptions
+SystemExit- sys.exit()
+StandardError- except sys.exit()/StopIteration
+OverflowError- numeric type errors exceed the limit
+ArithmeticError- base class for all classes
+IOError- import file error
+FloatingPointError- 
+AssertionError- 
+AttributeError-
+ImportError
+KeyError
+EnvironmentError
+IndexError
+StopIterationError
+EOFError
+LookUpError
+SyntaxError
+SystemError
+IndentationError
+'''
+----------------------------------------------------------------
+class myError(Exception):
+    def __init__(self,value):
+        self.value=value
+    def __str__(self):
+        return repr(self.value)
+try:
+    raise myError(99)
+except myError as e:
+    print("Returned string s is:",e)
+
+Output:
+Returned string s is: 99
+----------------------------------------------------------------
+
