@@ -139,8 +139,33 @@ try:
     raise myError(99)
 except myError as e:
     print("Returned string s is:",e)
+    print(type(e.value))
 
 Output:
 Returned string s is: 99
+<class 'int'>
 ----------------------------------------------------------------
+try:
+    print("raise Exception")
+    raise ValueError
+finally:
+    print("performing cleanup by finally")
+
+output:
+raise Exception
+performing cleanup by finally
+-----------------------------------------------------------------
+try:
+    print("abc")
+    raise ValueError
+except:
+    print("123")
+finally:
+    print("abc123")
+
+Output:
+abc
+123
+abc123
+---------------------------------------------------------------
 
