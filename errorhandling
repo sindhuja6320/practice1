@@ -167,5 +167,106 @@ Output:
 abc
 123
 abc123
----------------------------------------------------------------
+--------------------------------------------------------------
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++CALCULATOR++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+#interactive calc model with python operation
+""" using class exception modeles"""
+class Calculator:
+    def __init__(self):
+        self.one=0
+        self.two=0
+    def input_numbers(self):
+        try:
+            self.one=float(input("enter 1st number:"))
+            self.two=float(input("enter 2nd number:"))
+        except ValueError:
+            print("invalid input.....please enter number")
+            self.input_numbers()
+    def add(self):
+        return self.one+self.two
+    def subtract(self):
+        return self.one-self.two
+    def multiply(self):
+        return self.one*self.two
+    def divide(self):
+        if self.two==0:
+            raise ZeroDivisionError("can't divide with zero")
+        return self.one/self.two
+    def modulo(self):
+        return self.one%self.two
+    def expo(self):
+        return self.one**self.two
+    def floor_division(self):
+        return self.one//self.two
+def display_menu():
+    print("\n =======calculator menu ==============\n" )
+    print("1.Addition(+)")
+    print("2.Subtraction(-)")
+    print("3.Multiplication(*)")
+    print("4.Division(/)")
+    print("5.Modulo(%)")
+    print("6.Exponential(**)")
+    print("7.Floor Division(//)")
+    print("8.Exit")
+    
+def main():
+    calc=Calculator()
+    while True:
+        display_menu()
+        choice=input("select an operation (1-8):")
+        if choice == "8":
+            print("exit")
+            break
+        calc.input_numbers()
+        try:
+            if choice == "1":
+                print("result:",calc.add())
+            elif choice=="2":
+                print("result:",calc.subtract())
+            elif choice=="3":
+                print("result:",calc.multiply())
+            elif choice=="4":
+                print("result:",calc.divide())
+            elif choice=="5":
+                print("result:",calc.modulo())
+            elif choice=="6":
+                print("result:",calc.expo())
+            elif choice=="7":
+                print("result:",calc.floor_division())
+            else:
+                print("invalid choice select from 1 to 8")
+        except ZeroDivisionError as e:
+            print("Error :",e)
+        except Exception as e:
+            print("unexpected error",e)
+main()
+OUTPUT:
+ =======calculator menu ==============
+
+1.Addition(+)
+2.Subtraction(-)
+3.Multiplication(*)
+4.Division(/)
+5.Modulo(%)
+6.Exponential(**)
+7.Floor Division(//)
+8.Exit
+select an operation (1-8): 1
+enter 1st number: 2
+enter 2nd number: 3
+result: 5.0
+
+ =======calculator menu ==============
+
+1.Addition(+)
+2.Subtraction(-)
+3.Multiplication(*)
+4.Division(/)
+5.Modulo(%)
+6.Exponential(**)
+7.Floor Division(//)
+8.Exit
+select an operation (1-8): 8
+exit
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
