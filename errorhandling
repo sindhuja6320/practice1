@@ -1,0 +1,110 @@
+ """errors and exception 
+types of errors/excption
+try-block
+except
+finally
+rasing exception
+built-in function"""
+#logical errors- ZeroDivisionError,NameError,TypeError
+#handling ZeroDivisionError
+num=int(input())
+den=int(input())
+try:
+    q=num/den
+    print("result:",q)
+except ZeroDivisionError:
+    print("den can't be divisible by zero")
+output:
+ 5
+ 0
+den can't be divisible by zero
+---------------------------------------------------------------------------
+#multiple exception handling
+try:
+    num=int(input())
+    print(num)
+except(KeyboardInterrupt):
+    print("you have to enter a number.....not string")
+except(ValueError):
+    print("please check before you press enter......program end")
+print("bye byee")
+output:
+ ff
+please check before you press enter......program end
+bye byee
+-------------------------------------------------------------
+#multiple exceptions in a single block handling
+try:
+    num=int(input())
+    print(num)
+except(KeyboardInterrupt,ValueError,TypeError):
+    print("please check befor entering....program")
+output:
+dnsjk
+please check befor entering....program
+-----------------------------------------------------------
+#raise an exceptions
+try:
+    n=9
+    print(n)
+    raise ValueError
+except:
+    print("even executing perfectly ....exception raise manually")
+output:
+9
+even executing perfectly ....exception raise manually
+----------------------------------------------------------------------------
+#re raise an error
+try:
+    raise NameError
+except:
+    print("re-raise")
+    raise
+output:
+re-raise
++++++++++++++++
+NameError                                 Traceback (most recent call last)
+Cell In[25], line 3
+      1 #re raise an error
+      2 try:
+----> 3     raise NameError
+      4 except:
+      5     print("re-raise")
+
+NameError: 
+-----------------------------------------------------------------------------
+#instance using in exceptions
+try: raise Exception ('hi','prerana','goodmorning')
+except Exception as errorObj:
+    print(type(errorObj))
+    print(errorObj.args)
+    print(errorObj)
+    x,y,z=errorObj.args
+    print("assigned1:",x)
+    print("assigned2:",y,z)
+output:
+class 'Exception'>
+('hi', 'prerana', 'goodmorning')
+('hi', 'prerana', 'goodmorning')
+assigned1: hi
+assigned2: prerana goodmorning
+-----------------------------------------------------------
+def div(n,d):
+    try:
+        q=n/d
+        print(q)
+    except ZeroDivisionError:
+        print("non-processed")
+n=int(input())
+d=int(input())
+div(n,d)
+output:
+ 4
+ 2
+2.0
+
+
+3
+ 0
+non-processed
+----------------------------------------------------------------
